@@ -6,8 +6,8 @@
 
 class Book {
 
-	int pagesAmount;
 	std::string name;
+	int pagesAmount;
 	int publishingYear;
 	float price;
 
@@ -28,7 +28,7 @@ public:
 		this->price = price;
 	}
 
-	~Book() { name.~basic_string(); }
+	~Book() { }
 
 	int getPagesAmount() { return pagesAmount; }
 
@@ -39,6 +39,7 @@ public:
 	float getPrice() { return price; }
 
 	friend std::istream& operator>>(std::istream& in, Book& book);
+	friend std::ostream& operator<<(std::ostream& out, Book& book);
 };
 
 #endif
